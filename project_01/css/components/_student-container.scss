@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+
+
+body {
+    position: relative;
+
+    .students-container {
+        height: calc(100vh - 141.45px)!important;
+        background-color: var.$background-color-primary!important;
+    }
+}

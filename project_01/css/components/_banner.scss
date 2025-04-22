@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.banner {
+    @extend %banner-section;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.295) , rgba(0, 0, 0, 0.315)),
+     url("https://images.unsplash.com/photo-1462826303086-329426d1aef5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+
+    h1 {
+        font-size: var.$heading-size-bigger;
+        font-weight: var.$font-weight-bolder;
+        color: var.$text-color-secondary;
+        margin-bottom: 0;
+
+        @include mix.tablet-styles {
+            font-size: var.$heading-size-big;
+        }
+
+        
+        @include mix.mobile-styles {
+            font-size: var.$heading-size-small;
+        }
+    }
+}

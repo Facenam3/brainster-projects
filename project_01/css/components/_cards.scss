@@ -1,0 +1,84 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+
+.cards {
+    @extend %card-section;
+    background-color: var.$background-color-primary;
+    margin-right: 0;
+    margin-bottom: 0;
+
+    .header {
+        text-align: center;
+        font-weight: var.$font-weight-bolder;
+        font-size: var.$heading-size-small;
+    }
+
+    .inner {
+        @extend %wrap;
+        width: 75%;
+        display: flex;
+        flex-wrap: wrap;
+
+        .card {
+            flex-basis: 33.333%;
+            
+
+            @include mix.tablet-styles {
+                flex-basis: 50%;
+            }
+
+            @include mix.mobile-styles {
+                flex-basis: 100%;
+            }
+            .card-inner {
+                background-color: var.$background-color-base;
+                box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15), 0 3px 5px 0 rgba(0, 0, 0, 0.15);
+                border-radius: 10px;
+                margin-right: 15px;
+                margin-bottom: 15px;
+                display: flex;
+                flex-direction: column;
+                transition: 0.3s;
+
+                &:hover {
+                    transform: scale(1.03);
+                    z-index: 2;
+                }
+
+                @include mix.mobile-styles {
+                    margin-right: 0px;
+                }
+
+                img {
+                    flex-basis: 40%;
+                    border-top-right-radius: 10px;
+                    border-top-left-radius: 10px;
+                }
+                
+                .card-text {
+                    flex-basis: 60%;
+                    @extend %wrap;
+                    width: 95%;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 15px 5px;
+
+                    p {
+                        width: 100%;
+                        font-size: var.$font-size-base;
+                    }
+
+                    .btn {
+                        font-weight: var.$font-weight-normal;
+                        display: block;
+                        width: fit-content;
+                        align-self: self-end;
+                    }
+                }
+                
+
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    margin: 0;
+    position: relative;
+}
+  
+h1,
+h2,
+h3,
+p,
+ul {
+    margin-top: 0;
+}
+
+ul {
+    list-style: none;
+}
+  
+img {
+    display: block;
+    max-width: 100%;
+}

@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+
+.form {
+    background-color: var.$background-color-primary;
+    opacity: 0.90;
+    min-height: calc(100vh - 141.5px);
+
+    form {
+        .input-control {
+            input {
+                &:focus {
+                    outline: 0;
+                }
+            }
+
+            &.succes {
+                input {
+                    border-color: #09c372;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+// Variable Definitions (replace with your actual variables)
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    @include mix.tablet-styles {
+        flex-direction: column;
+    }
+
+
+    label {
+        flex-basis: 33.333%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var.$gutter-base * 1.5;
+        font-size: var.$font-size-big;
+        background-color: var.$background-color-grey;
+        color: var.$text-color-secondary;
+       
+        @include mix.tablet-styles {
+           font-size: var.$font-size-medium;
+           padding: var.$gutter-base;
+        }
+       
+         
+        &:not(:last-child) {
+            border-right: 1px solid var.$text-color-secondary;
+
+            @include mix.tablet-styles {
+                border-right: none;
+                border-bottom: 1px solid var.$text-color-secondary;
+             }
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        span {
+            flex-basis: 75%;
+
+            @include mix.mobile-styles {
+                flex-basis: 80%;
+             }
+        }
+
+        input[type = "checkbox"] {
+            display: none;
+
+            &:checked + i {
+                display: inline-block;
+            }
+
+            &:checked + label {
+                display: none;
+            }
+        }
+
+        i {
+            display: none;
+        }
+    }
+}

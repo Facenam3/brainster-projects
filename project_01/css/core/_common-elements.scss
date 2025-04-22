@@ -1,0 +1,30 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+
+body {
+    font-family: var.$font-family-base;
+    color: var.$text-color-primary;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var.$background-color-button;
+    color: var.$text-color-secondary;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: var.$font-weight-bold;
+
+    &:hover {
+        background-color: rgb(252, 82, 52);
+    }
+}
+
+.coding-btn {
+    background-color: var.$background-color-primary;
+    display: block;
+    width: fit-content;
+    padding: 4px 7px;
+    font-weight: var.$font-weight-bolder;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/8c0d052db3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Contact</title>
+  </head>
+
+  <body>
+    <nav>
+      <div class="wrapper">
+        <a href="./index.html" class="logo">
+          <img src="./images/Logo.png" alt="logo" />
+          Brainster
+        </a>
+        <ul>
+          <li>
+            <a href="https://brainster.co/marketing/" target="_blank"
+              >Академија за маркетинг</a
+            >
+          </li>
+          <li>
+            <a href="https://brainster.co/full-stack/" target="_blank"
+              >Академија за програмирање</a
+            >
+          </li>
+          <li>
+            <a href="https://brainster.co/data-science/" target="_blank"
+              >Академија за data science</a
+            >
+          </li>
+          <li>
+            <a href="https://brainster.co/graphic-design/" target="_blank"
+              >Академија за дизајн</a
+            >
+          </li>
+        </ul>
+        <a href="./contact.html" class="btn">Вработи наш студент</a>
+        <button class="hamburger">
+          <div class="bar"></div>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-nav">
+      <div class="inner">
+        <ul>
+          <li>
+            <a href="https://brainster.co/marketing/" target="_blank"
+              >Академија за маркетинг</a
+            >
+          </li>
+          <li>
+            <a href="https://brainster.co/full-stack/" target="_blank"
+              >Академија за програмирање</a
+            >
+          </li>
+          <li>
+            <a href="https://brainster.co/data-science/" target="_blank"
+              >Академија за data science</a
+            >
+          </li>
+          <li>
+            <a href="https://brainster.co/graphic-design/" target="_blank"
+              >Академија за дизајн</a
+            >
+          </li>
+        </ul>
+        <a href="#" class="btn">Вработи наш студент</a>
+      </div>
+    </div>
+    <div class="form">
+      <div class="container">
+        <div class="header p-5 mb-3">
+          <h1 class="text-center display-4 fw-bold">Вработи студенти</h1>
+        </div>
+        <form
+          class="row gy-3 gx-3 pb-5 mb-4"
+          action="./php/process-form.php"
+          method="post"
+        >
+          <input type="hidden" name="id" />
+          <div class="col-12 col-md-6">
+            <label for="name" class="form-label fw-bolder">Име и презиме</label>
+            <input
+              type="text"
+              class="form-control p-3 fst-italic"
+              name="name"
+              id="name"
+              required
+              placeholder="Вашето име и презиме"
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="company_name" class="form-label fw-bolder"
+              >Име на компанија</label
+            >
+            <input
+              type="text"
+              class="form-control p-3 fst-italic"
+              name="company_name"
+              id="company_name"
+              required
+              placeholder="Име на вашата компанија"
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="company_email" class="form-label fw-bolder"
+              >Контакт имејл</label
+            >
+            <input
+              type="email"
+              class="form-control p-3 fst-italic"
+              name="company_email"
+              id="company-email"
+              required
+              placeholder="Контакт имејл на вашата компанија"
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="company_number" class="form-label fw-bolder"
+              >Контакт телефон</label
+            >
+            <input
+              type="tel"
+              class="form-control p-3 fst-italic"
+              name="company_number"
+              id="company_number"
+              required
+              placeholder="Контакт телефон на вашата компанија"
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="students" class="form-label fw-bolder"
+              >Тип на студенти</label
+            >
+            <select
+              class="form-select p-3 fw-bolder"
+              aria-label="Default select example"
+              id="students"
+              name="students"
+            >
+              <option selected>Изберете тип на студент</option>
+              <option value="marketing-student">Академија за маркетинг</option>
+              <option value="programing-student">
+                Академија за програмирање
+              </option>
+              <option value="design-student">Академија за дизајн</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-6 mt-5">
+            <input
+              type="submit"
+              name="submit"
+              value="ИСПРАТИ"
+              class="form-label btn btn-primary col-12 p-3 border-0"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer>
+      <p>
+        Изработено со <span><i class="fa-solid fa-heart"></i></span> од
+        студентите на Brainster
+      </p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/contact.js"></script>
+  </body>
+</html>
