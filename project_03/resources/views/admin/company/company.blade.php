@@ -1,0 +1,87 @@
+<x-app-layout>
+
+    <main class="flex p-6 ">
+        <div class="py-12 px-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+                <div class="flex justify-between align-center">
+                    <h1 class="p-4 text-xl text-orange-500 font-medium ">Company</h1>
+                    <a href="{{ route('admin.company-form') }}"
+                        class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-lg px-5 py-2 me-2 mb-2 dark:focus:ring-yellow-900">Add
+                        Company Info</a>
+                </div>
+
+                <div class="body  border border-gray-400 rounded-md mt-3">
+                    <table class="w-full text-lg text-left rounded-md table-fixed">
+                        <thead class="text-md text-white capitalize bg-orange-500 font-medium rounded-md">
+                            <tr>
+                                <th class="px-6 py-3">
+                                    general
+                                </th>
+                                <th class="px-6 py-3">
+                                    about us
+                                </th>
+                                <th class="px-6 py-3">
+                                    contact
+                                </th>
+                                <th class="px-6 py-3">
+                                    location
+                                </th>
+                                <th class="px-6 py-3">
+                                    Image
+                                </th>
+                                <th class="px-6 py-3">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if ($companies)
+                                @foreach ($companies as $company)
+                                    <tr class="border-b-2">
+                                        <td class="px-6 py-3">
+                                            {{ $company->general }}
+                                        </td>
+                                        <td class="px-6 py-3">
+                                            {{ $company->about_us }}
+                                        </td>
+                                        <td class="px-6 py-3">
+                                            {{ $company->contact }}
+                                        </td>
+                                        <td class="px-6 py-3">
+                                            {{ $company->location }}
+                                        </td>
+                                        <td class="px-6 py-3">
+                                            <img width="75px" height="100px"
+                                                src="{{ asset('storage/' . $company->hero_image) }}" alt=" ">
+                                        </td>
+                                        <td>
+                                            <a href="#" data-id="{{ $company->id }}" class="text-blue-600 mx-2"
+                                                id='edit'>
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                Edit
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endif
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+    </main>
+
+    <script>
+        $(document).on('click', '#edit', function(e) {
+            e.preventDefault();
+
+
+
+            const companyId = $(this).data('id');
+            window.location.href = `/admin/company-edit/${companyId}`;
+        });
+    </script>
+</x-app-layout>
